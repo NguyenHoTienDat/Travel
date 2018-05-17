@@ -316,7 +316,7 @@ public class SearchModelView extends BaseObservable implements SearchContract.Vi
             isFilterByAmerica.set(b);
         } else if (regionName.equalsIgnoreCase("Asia")) {
             isFilterByAsia.set(b);
-        } else if (regionName.equalsIgnoreCase("Afica")) {
+        } else if (regionName.equalsIgnoreCase("Africa")) {
             isFilterByAfrica.set(b);
         } else if (regionName.equalsIgnoreCase("Europe")) {
             isFilterByEurope.set(b);

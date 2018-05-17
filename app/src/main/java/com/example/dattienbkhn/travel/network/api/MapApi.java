@@ -12,7 +12,8 @@ import retrofit2.http.Query;
  */
 
 public interface MapApi {
-    @GET("api/directions/json?alternatives=true&language=vi&key=AIzaSyAxmIkmP7GTLXx4JVFWL77kL6tePvcbOwY")
+    //&language=vi
+    @GET("api/directions/json?alternatives=true&key=AIzaSyAxmIkmP7GTLXx4JVFWL77kL6tePvcbOwY")
     Observable<DirectionResponse> getDirection(@Query("origin") String origin, @Query("destination") String destination);
 
     @GET("api/place/nearbysearch/json?key=AIzaSyAxmIkmP7GTLXx4JVFWL77kL6tePvcbOwY")

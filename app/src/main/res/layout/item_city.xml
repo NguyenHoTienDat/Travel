@@ -52,7 +52,7 @@
                 android:layout_marginLeft="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginRight="@dimen/dp_8"
-                android:text="Recommended for"
+                android:text="Suggested for"
                 android:textSize="@dimen/sp_12"
                 android:textColor="@android:color/darker_gray" />
 
