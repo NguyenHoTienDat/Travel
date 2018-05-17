@@ -315,17 +315,23 @@ public class CustomBindingAdapter {
                     googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                         @Override
                         public void onMapClick(LatLng latLng) {
-                            makerPolylines.get(0).showInfoWindow();
+                            if (makerPolylines != null && makerPolylines.size()>0) {
+                                makerPolylines.get(0).showInfoWindow();
+                                //viewmodel event
+                                mapEvent.onMapClick();
+                            }
 
-                            //viewmodel event
-                            mapEvent.onMapClick();
+
+
                         }
                     });
 
                     googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                         @Override
                         public boolean onMarkerClick(Marker marker) {
-                            makerPolylines.get(0).showInfoWindow();
+                            if (makerPolylines != null && makerPolylines.size()>0) {
+                                makerPolylines.get(0).showInfoWindow();
+                            }
                             return true;
                         }
                     });
