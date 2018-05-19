@@ -81,8 +81,10 @@ public class CameraActivity extends Activity implements AdapterGridImage.IimageC
 
             // layoutOfListImage.setVisibility(View.VISIBLE); //sau khi chup xong hien thi gridView
             try {
-                  saveImageToExternalStorage(bitMap);
-                  saveImageToInternalStorage(bitMap);
+                String state = Environment.getExternalStorageState();
+                if (Environment.MEDIA_MOUNTED.equals(state)) {
+                    saveImageToExternalStorage(bitMap);
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -214,19 +216,19 @@ public class CameraActivity extends Activity implements AdapterGridImage.IimageC
 
 
     public boolean saveImageToExternalStorage(Bitmap image) { //save image to SD card
-        String fullPath = Environment.getExternalStorageDirectory().getAbsolutePath() + APP_PATH_SD_CARD;
+        //String fullPath = Environment.getExternalStorageDirectory().getAbsolutePath() + APP_PATH_SD_CARD;
         //tao them thu muc rieng cho cac thanh pho
         try {
-            String cityPath = fullPath + "/test";
-            File dir = new File(cityPath);
-            if (!dir.exists()) {
-                dir.mkdirs();
-            } //tao thu muc chua anh voi ten thanh pho hien tai
+           // String cityPath = fullPath + "/test";
+           // File dir = new File(cityPath);
+            //if (!dir.exists()) {
+               // dir.mkdirs();
+            //} //tao thu muc chua anh voi ten thanh pho hien tai
 
             Random rd = new Random();
 
             OutputStream fOut = null;
-            File file = new File(cityPath, "/" + rd.nextInt() + ".png"); //doan nay tao ten cho tung anh trong thu muc CameraAPI
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),  "bkTravel"); //doan nay tao ten cho tung anh trong thu muc CameraAPI
             file.createNewFile();
             fOut = new FileOutputStream(file);
 

@@ -281,6 +281,8 @@ public class FriendViewModel extends BaseObservable implements FriendContract.Vi
             } else {
                 isFollow.set(Boolean.TRUE);
             }
+        } else {
+            mNavigator.onErrorMessage("Login to continues");
         }
     }
 
