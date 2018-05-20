@@ -207,6 +207,8 @@ public class SearchModelView extends BaseObservable implements SearchContract.Vi
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
+                        isPlaceSearchVisible.set(false);
+                        isCitySearchVisible.set(false);
                         mNavigator.onErrorMessage("No search results!");
                     }
                 });
@@ -276,11 +278,14 @@ public class SearchModelView extends BaseObservable implements SearchContract.Vi
                         if (listWrapperResponse.getMessage().equalsIgnoreCase(ResponseCode.ListPlace.toString())) {
                             mPlaceSearchAdapter.setData(listWrapperResponse.getData());
                             isPlaceSearchVisible.set(true);
+                        } else {
+                            isPlaceSearchVisible.set(false);
                         }
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
+                        isPlaceSearchVisible.set(false);
                         mNavigator.onErrorMessage("No search results!");
                     }
                 });
@@ -298,11 +303,14 @@ public class SearchModelView extends BaseObservable implements SearchContract.Vi
                         if (listWrapperResponse.getMessage().equalsIgnoreCase(ResponseCode.ListCity.toString())) {
                             mCitySearchAdapter.setData(listWrapperResponse.getData());
                             isCitySearchVisible.set(true);
+                        } else {
+                            isCitySearchVisible.set(false);
                         }
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
+                        isCitySearchVisible.set(false);
                         mNavigator.onErrorMessage("No search results!");
                     }
                 });

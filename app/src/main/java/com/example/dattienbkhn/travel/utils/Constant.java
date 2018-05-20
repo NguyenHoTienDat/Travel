@@ -17,10 +17,10 @@ public class Constant {
     //public static final String SOCKET_IO_URL = "http://192.168.1.49:3000";
 
     //home hn
-    public static String TRAVEL_API_BASE_URL = "http://192.168.1.13:5000/api/travel/";
-    public static final String VOD_BASE_URL = "rtmp://192.168.1.13:1935/vod/";
-    public static final String RTMP_BASE_URL = "rtmp://192.168.1.13:1935/live/";
-    public static final String SOCKET_IO_URL = "http://192.168.1.13:3000";
+    public static String TRAVEL_API_BASE_URL = "http://192.168.1.4:5000/api/travel/";
+    public static final String VOD_BASE_URL = "rtmp://192.168.1.4:1935/vod/";
+    public static final String RTMP_BASE_URL = "rtmp://192.168.1.4:1935/live/";
+    public static final String SOCKET_IO_URL = "http://192.168.1.4:3000";
 
     //test wifi
 //    public static String TRAVEL_API_BASE_URL = "http://192.168.43.75:5000/api/travel/";
